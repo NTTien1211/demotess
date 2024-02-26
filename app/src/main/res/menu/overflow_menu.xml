@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_settings"
+        android:title="Cài đặt" />
+    <item
+        android:id="@+id/action_help"
+        android:title="Trợ giúp" />
+    <!-- Thêm các item khác tại đây nếu cần -->
+</menu>

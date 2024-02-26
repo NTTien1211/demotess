@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Menu bên phải -->
+    <item
+        android:id="@+id/action_undo"
+        android:title="Undo"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_save"
+        android:title="Save"
+        app:showAsAction="always" />
+
+    <!-- Menu dấu ba chấm -->
+    <item
+        android:id="@+id/action_more"
+        android:title="More Options"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_settings"
+                android:title="Settings" />
+            <item
+                android:id="@+id/action_help"
+                android:title="Help" />
+            <!-- Thêm các mục khác tại đây nếu cần -->
+        </menu>
+    </item>
+</menu>

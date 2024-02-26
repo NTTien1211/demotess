@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Untitled"/>
+
+        <LinearLayout
+            android:layout_below="@+id/text_title"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginRight="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last edit: "/>
+            <TextView
+                android:id="@+id/day_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="26/2/2024"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=", "/>
+            <TextView
+                android:id="@+id/time_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="21:56"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
