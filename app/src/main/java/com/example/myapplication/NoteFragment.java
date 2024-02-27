@@ -33,8 +33,10 @@ public class NoteFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_note, container, false);
         database = new Database(getActivity(), "note.sqlite", null, 2);
         mlist = new ArrayList<>();
-        GetDataJob();
 
+
+        database.QueryData("CREATE TABLE IF NOT EXISTS NOTE(Id INTEGER PRIMARY KEY AUTOINCREMENT, Title VARCHAR(200), Content VARCHAR(200), DayNote VARCHAR(200) ,  TimeNote VARCHAR(200) ); ");
+        GetDataJob();
         floatingActionButton = view.findViewById(R.id.button);
         recyclview = view.findViewById(R.id.recyclview);
         adapter = new Note_show_adapter(mlist);
@@ -53,17 +55,19 @@ public class NoteFragment extends Fragment {
     private void GetDataJob(){
         Cursor dataNote = database.GetData("SELECT * FROM NOTE");
         mlist.clear();
-        while (dataNote.moveToNext()){
-            int id = dataNote.getInt(0);
-            String name = dataNote.getString(1);
-            String note = dataNote.getString(2);
-            String day = dataNote.getString(3);
-            String time = dataNote.getString(4);
-            mlist.add(new NoteModel(id, name, note,day, time));
-        }
+        if (dataNote!=null){
+            while (dataNote.moveToNext()){
+                int id = dataNote.getInt(0);
+                String name = dataNote.getString(1);
+                String note = dataNote.getString(2);
+                String day = dataNote.getString(3);
+                String time = dataNote.getString(4);
+                mlist.add(new NoteModel(id, name, note,day, time));
+            }
 
-        if (adapter != null) {
-            adapter.notifyDataSetChanged();
+            if (adapter != null) {
+                adapter.notifyDataSetChanged();
+            }
         }
     }
 
